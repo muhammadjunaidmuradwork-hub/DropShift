@@ -1,0 +1,11 @@
+/dist/
+/runtime/
+/test-output/
+/.vs/
+*.user
+*.suo
+*.log
+__pycache__/
+*.pyc
+.env
+.env.*
