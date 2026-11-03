@@ -6,6 +6,27 @@ DropShift is an offline Windows tray application. It writes converted copies bes
 
 Current source: **0.3.2.1**, the working application with optional Windows sign-in startup. This is a development project, not a claim that every file can convert into every other format. Office cold starts can take tens of seconds. Complex layouts, fonts and media streams have limitations.
 
+## Download and run
+
+There is **no ready-to-run Windows download** on the Releases page yet. GitHub's **Code → Download ZIP** downloads the source code, not a built app. Do not look for `DropShift.exe` inside that ZIP.
+
+To build and try the available Windows-native image conversions:
+
+1. On this repository page, choose **Code → Download ZIP** (or download the [source ZIP](https://github.com/muhammadjunaidmuradwork-hub/DropShift/archive/refs/heads/main.zip) directly).
+2. In Windows Explorer, right-click the downloaded ZIP, choose **Extract All**, and open the extracted `DropShift-main` folder.
+3. On 64-bit Windows 10/11 with .NET Framework 4.8 installed, open PowerShell in that folder and run:
+
+   ```powershell
+   .\build.ps1
+   .\test.ps1
+   ```
+
+4. Launch `dist\DropShift.exe`. Keep it running in the tray while using the drag-and-Shift gesture below.
+
+If PowerShell blocks the local script, use `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1` and the same command with `test.ps1`. This changes policy for that command only. Downloading the ZIP does not install DropShift or set it to start with Windows.
+
+The plain build does **not** include the external engines for WebP, PDF, Office, OCR, audio or video. To use those conversions, follow [runtime setup](RUNTIME.md) and build with a complete engine folder. The complete engine bundle is not publicly downloadable yet.
+
 ## Use
 
 1. Launch `DropShift.exe`.
